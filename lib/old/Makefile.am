@@ -8,3 +8,6 @@ libold_includedir = $(includedir)/libold-1.0/old
 
 libold_include_HEADERS = old.h
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = old.pc
+

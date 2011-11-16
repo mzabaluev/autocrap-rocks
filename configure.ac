@@ -14,7 +14,9 @@ AC_CONFIG_FILES([
   Makefile
   lib/Makefile
   lib/old/Makefile
+  lib/old/old.pc
   lib/crap/Makefile
+  lib/crap/crap.pc
   src/Makefile
 ])
 AC_OUTPUT

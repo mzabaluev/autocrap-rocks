@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+includedir=@includedir@
+libdir=@libdir@
+
+Name: Crap
+Description: The 'crap' library from autocrap-rocks project
+Version: @VERSION@
+
+Cflags: -I${includedir}/crap-1.0
+Libs: -L${libdir} -lcrap
+Requires.private: old
+
