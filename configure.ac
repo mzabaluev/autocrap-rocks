@@ -1,3 +1,4 @@
+AC_PREREQ([2.60])
 AC_INIT([autocrap-rocks], [1.0])
 
 AC_CONFIG_HEADERS([config.h])
@@ -10,6 +11,9 @@ AC_CANONICAL_HOST
 
 AC_PROG_CC
 
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.18])
+
 AC_CONFIG_FILES([
   Makefile
   lib/Makefile
@@ -17,6 +21,7 @@ AC_CONFIG_FILES([
   lib/old/old.pc
   lib/crap/Makefile
   lib/crap/crap.pc
+  po/Makefile.in
   src/Makefile
   tests/Makefile
 ])

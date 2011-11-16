@@ -9,5 +9,6 @@ Version: @VERSION@
 
 Cflags: -I${includedir}/crap-1.0
 Libs: -L${libdir} -lcrap
+Libs.private: @LIBINTL@
 Requires.private: old
 

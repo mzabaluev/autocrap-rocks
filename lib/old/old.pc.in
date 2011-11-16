@@ -8,4 +8,5 @@ Description: The 'old' library from autocrap-rocks project
 Version: @VERSION@
 Cflags: -I${includedir}/old-1.0
 Libs: -L${libdir} -lold
+Libs.private: @LIBINTL@
 

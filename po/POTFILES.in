@@ -1,0 +1,4 @@
+# List of source files which contain translatable strings.
+lib/old/old.c
+lib/crap/crap.c
+src/rocks.c

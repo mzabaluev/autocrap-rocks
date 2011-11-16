@@ -1,0 +1,10 @@
+/Makefile.in.in
+/Makevars.template
+/POTFILES
+/stamp-po
+/*.sin
+/*.sed
+/*quot*
+
+/autocrap-rocks.pot
+*.gmo
