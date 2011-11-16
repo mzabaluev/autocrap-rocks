@@ -1,0 +1,33 @@
+# Russian translations for autocrap-rocks package.
+# Copyright (C) 2011 Mikhail Zabaluev
+# This file is distributed under the same license as the autocrap-rocks package.
+# Mikhail Zabaluev <mikhail.zabaluev@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: autocrap-rocks 1.0\n"
+"Report-Msgid-Bugs-To: mikhail.zabaluev@gmail.com\n"
+"POT-Creation-Date: 2011-11-16 21:41+0200\n"
+"PO-Revision-Date: 2011-11-16 23:19+0200\n"
+"Last-Translator: Mikhail Zabaluev <mikhail.zabaluev@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: lib/old/old.c:21
+msgid "Yo, makefile writer, I'm really happy for you and I'mma let you finish,"
+msgstr ""
+"Йо, писатель файлов для утилиты make, я вправду рад за тебя и я дам тебе "
+"закончить,"
+
+#: lib/crap/crap.c:25
+msgid "but autotools are one of the best build systems of all time."
+msgstr "но autotools — одна из лучших систем сборки всех времен."
+
+#: src/rocks.c:16
+msgid "One of the best build systems of all time!"
+msgstr "Одна из лучших систем сборки всех времен!"
