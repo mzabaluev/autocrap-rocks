@@ -1,2 +1,59 @@
 So you think you can do it better with a pile of makefiles, punk? Show me.
 
+This example project attempts to showcase various features that GNU autotools
+provide to developers at little or no implementation cost.
+
+If you have checked this project out and you don't have the configure
+executable in the top directory, make sure you have autoconf, automake, and
+libtool installed, and run:
+./autogen.sh --no-configure
+
+You can examine available configure options and environment variables by
+running this command:
+
+./configure --help
+
+An incomplete list of features supported in this project's build files:
+
+* Supports all GNU makefile and configure script conventions, such as
+conventional directory location options and makefile variables, compiler
+selection and flags, etc.
+
+* Makefile rules automatically regenerate build files and rebuild all objects
+after autotools control files are modified.
+
+* Automatically tracks header dependencies for rebuilding.
+Note: Sometimes it breaks the build due to added or moved files, but you can
+disable dependency tracking, rebuild the project in a clean tree, and enable
+deps back.
+
+* Can build in a separate tree for output files.
+
+* The libraries and programs with interdependencies in the project are linked
+and wrapped as necessary to run them directly in the build tree.
+
+* With make install rule, the shared libraries are installed with relinking as
+necessary for the destination directories.
+
+* Substitution of configuration variables in installable files such
+as .pc files for pkg-config.
+
+* Supports installation to DESTDIR so that distribution package maintainers
+will love you.
+
+* Makefile target 'dist' to create a distribution source tarball. Not everyone
+is thrilled about picking out your sources from the SCM working tree
+and bootstrapping configure with autotools as described above.
+
+* Automatically picks up the project boilerplate such as README, COPYING,
+AUTHORS, and includes it into the dist tarball.
+
+* Supports cross-compilation if instructed by configure option --host.
+
+* Supports a sysroot location for cross-builds, discoverable from a GCC-style
+cross-compiler.
+
+* Optionally builds static libraries.
+
+* An option for non-verbose printouts of makefile rule execution.
+
