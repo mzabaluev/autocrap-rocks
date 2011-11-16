@@ -2,7 +2,7 @@ AC_INIT([autocrap-rocks], [1.0])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([foreign silent-rules])
+AM_INIT_AUTOMAKE([foreign silent-rules color-tests])
 LT_INIT([disable-static])
 
 AC_CANONICAL_BUILD
@@ -18,6 +18,7 @@ AC_CONFIG_FILES([
   lib/crap/Makefile
   lib/crap/crap.pc
   src/Makefile
+  tests/Makefile
 ])
 AC_OUTPUT
 

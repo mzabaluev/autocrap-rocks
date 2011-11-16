@@ -48,6 +48,11 @@ and bootstrapping configure with autotools as described above.
 * Automatically picks up the project boilerplate such as README, COPYING,
 AUTHORS, and includes it into the dist tarball.
 
+* Supports a simple suite of test programs with coloring for test run results.
+
+* Makefile target 'distcheck' to verify that the sources in the dist tarball
+can be configured, compiled, and the results pass the test suite.
+
 * Supports cross-compilation if instructed by configure option --host.
 
 * Supports a sysroot location for cross-builds, discoverable from a GCC-style
