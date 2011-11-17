@@ -24,8 +24,7 @@ after autotools control files are modified.
 
 * Automatically tracks header dependencies for rebuilding.
 Note: Sometimes it breaks the build due to added or moved files, but you can
-disable dependency tracking, rebuild the project in a clean tree, and enable
-deps back.
+fix it by running configure again.
 
 * Can build in a separate tree for output files.
 
