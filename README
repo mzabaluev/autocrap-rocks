@@ -41,7 +41,9 @@ as .pc files for pkg-config.
 by libintl, it is automatically added to linker flags.
 
 * Targets to regenerate the .po template file and update translation
-files with changes of translatable strings in sources.
+files with changes of translatable strings in sources. When the list of
+translated sources is updated, the template and translations are updated
+automatically.
 
 * Supports installation to DESTDIR so that distribution package maintainers
 will love you.
