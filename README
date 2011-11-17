@@ -63,6 +63,12 @@ test suite, can be installed into a custom directory structure and DESTDIR
 and uninstalled without errors.
 
 * Supports cross-compilation if instructed by configure option --host.
+Note: in this mode, don't forget to use option --build to indicate the build
+system; this is needed due to problematic legacy behavior.
+
+* All macros checking for build tools respect the cross-tools triplet prefix
+in the cross-compilation mode. If the triplet-prefixed executable is not found,
+uses the unprefixed name, warning the user.
 
 * Supports a sysroot location for cross-builds, discoverable from a GCC-style
 cross-compiler.
