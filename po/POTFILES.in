@@ -1,4 +1,6 @@
 # List of source files which contain translatable strings.
+lib/old/kanye-notify.c
 lib/old/old.c
 lib/crap/crap.c
 src/rocks.c
+

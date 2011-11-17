@@ -14,6 +14,15 @@ AC_PROG_CC
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.18])
 
+dnl Dependency checks
+PKG_CHECK_MODULES([NOTIFY], [libnotify >= 0.7], [HAVE_LIBNOTIFY=yes], [HAVE_LIBNOTIFY=no])
+if test "$HAVE_LIBNOTIFY" = 'yes'; then
+  AC_DEFINE([HAVE_LIBNOTIFY], [1], [Define if you have libnotify])
+else
+  AC_MSG_WARN([Kanye will not be able to storm your screen!])
+fi
+AM_CONDITIONAL([KANYE_NOTIFY], [test "$HAVE_LIBNOTIFY" = 'yes'])
+
 AC_CONFIG_FILES([
   Makefile
   lib/Makefile
