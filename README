@@ -37,6 +37,12 @@ necessary for the destination directories.
 * Substitution of configuration variables in installable files such
 as .pc files for pkg-config.
 
+* Gets build flags from pkg-config files provided by build dependencies,
+using a one-line autoconf macro.
+
+* Selects conditional build variants and sets up configuration macro
+definitions based on results of e.g. dependency checks.
+
 * Supports l10n via gettext. If gettext API is not provided by libc, only
 by libintl, it is automatically added to linker flags.
 
