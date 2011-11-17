@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <locale.h>
 #include <libintl.h>
+
 #include <crap/crap.h>
+#include <old/kanye.h>
 
 #include "config.h"
 
@@ -19,8 +21,12 @@ int main()
     textdomain(PACKAGE);
 #endif
 
+    kanye_storm_stage();
+
     crap();
-    puts(_("One of the best build systems of all time!"));
+    kanye(_("One of the best build systems of all time!"));
+
+    kanye_drag_off_stage();
     return 0;
 }
 

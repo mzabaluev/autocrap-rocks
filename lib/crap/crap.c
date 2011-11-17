@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include <old/old.h>
+#include <old/kanye.h>
 
 #include "config.h"
 #include "l10n.h"
@@ -24,6 +25,6 @@ void crap()
     }
 
     old();
-    puts(_("but autotools are one of the best build systems of all time."));
+    kanye(_("but autotools are one of the best build systems of all time."));
 }
 
