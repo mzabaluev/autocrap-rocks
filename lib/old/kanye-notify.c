@@ -10,9 +10,10 @@ static NotifyNotification *current_notification = NULL;
 
 static void kanye_notification_clear()
 {
-    if (current_notification != NULL) {
-        g_object_unref(current_notification);
+    gpointer obj = current_notification;
+    if (obj != NULL) {
         current_notification = NULL;
+        g_object_unref(obj);
     }
 }
 
