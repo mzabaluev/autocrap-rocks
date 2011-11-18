@@ -88,6 +88,25 @@ the build uses the unprefixed name, but leaves a warning in the output.
 * Supports a sysroot location for cross-builds, discoverable from a GCC-style
 cross-compiler.
 
+* Detects when the C compiler is GCC, allowing portable usage of GCC-specific
+compiler flags.
+
+* The configure script has an option to cache results of checks, enabling
+quick reruns with cached values when external changes are not deemed
+important.
+
+* Supports declaration of important configuration variables and documents them
+in the output of ./configure --help. The values of precious variables are
+cached, and a configure rerun using the cache errors out when any such value
+changes. If the old and the new values only differ in whitespace, however,
+only a warning is produced, but the old value is used.
+
+* A script 'config.status' is produced to enable quick reconfiguration and
+regeneration of variable-substituted files, reusing options and precious
+variable values as given to the latest configure invocation.
+It is automatically invoked by the makefiles if changes to autotools
+files are detected.
+
 * Optionally builds static libraries.
 
 * An option for non-verbose printouts of makefile rule execution.
