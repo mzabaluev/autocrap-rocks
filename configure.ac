@@ -14,14 +14,33 @@ AC_PROG_CC
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.18])
 
-dnl Dependency checks
-PKG_CHECK_MODULES([NOTIFY], [libnotify >= 0.7], [HAVE_LIBNOTIFY=yes], [HAVE_LIBNOTIFY=no])
-if test "$HAVE_LIBNOTIFY" = 'yes'; then
-  AC_DEFINE([HAVE_LIBNOTIFY], [1], [Define if you have libnotify])
+PKG_PROG_PKG_CONFIG
+
+dnl Dependency checks, optional features
+AC_ARG_WITH([libnotify],
+  [AS_HELP_STRING([--with-libnotify],
+     [use libnotify API as an output backend [default=auto]])],
+  [],
+  [with_libnotify=auto])
+if test "$with_libnotify" = 'no'; then
+  have_libnotify=no
 else
-  AC_MSG_WARN([Kanye will not be able to storm your screen!])
+  PKG_CHECK_MODULES([NOTIFY], [libnotify >= 0.7],
+    [have_libnotify=yes], [have_libnotify=no])
+  if test "$have_libnotify" = 'yes'; then
+    AC_DEFINE([HAVE_LIBNOTIFY], [1], [Define if you have libnotify])
+  else
+    case $with_libnotify in
+      yes)
+        AC_MSG_ERROR([$NOTIFY_PKG_ERRORS])
+        ;;
+      auto)
+        AC_MSG_WARN([Kanye will not be able to storm your screen!])
+        ;;
+    esac
+  fi
 fi
-AM_CONDITIONAL([KANYE_NOTIFY], [test "$HAVE_LIBNOTIFY" = 'yes'])
+AM_CONDITIONAL([KANYE_NOTIFY], [test "$have_libnotify" = 'yes'])
 
 AC_CONFIG_FILES([
   Makefile
