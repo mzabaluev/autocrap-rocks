@@ -22,7 +22,8 @@ selection and flags, etc.
 * Makefile rules automatically regenerate build files and rebuild all objects
 after autotools control files are modified.
 
-* Automatically tracks header dependencies for rebuilding.
+* Automatically tracks header dependencies for rebuilding. This is an option
+that can be disabled, e.g. for distribution package builds.
 Note: Sometimes it breaks the build due to added or moved files, but you can
 fix it by running configure again.
 
@@ -38,7 +39,8 @@ necessary for the destination directories.
 as .pc files for pkg-config.
 
 * Gets build flags from pkg-config files provided by build dependencies,
-using a one-line autoconf macro.
+using a one-line autoconf macro. The make variables carrying these flags
+are listed in the output of ./configure --help.
 
 * Selects conditional build variants and sets up configuration macro
 definitions based on results of dependency checks or command line options.
@@ -61,7 +63,9 @@ will love you.
 
 * Makefile target 'dist' to create a distribution source tarball. Not everyone
 is thrilled about picking out your sources from the SCM working tree
-and bootstrapping configure with autotools as described above.
+and bootstrapping configure with autotools as described above. The
+implementation of the dist target does not impose any extra requirements
+such as relying on your SCM and its working tree.
 
 * Automatically picks up the project boilerplate such as README, COPYING,
 AUTHORS, and includes it into the dist tarball.
@@ -79,7 +83,7 @@ system; this is needed due to problematic legacy behavior.
 
 * All macros checking for build tools respect the cross-tools triplet prefix
 in the cross-compilation mode. If the triplet-prefixed executable is not found,
-uses the unprefixed name, warning the user.
+the build uses the unprefixed name, but leaves a warning in the output.
 
 * Supports a sysroot location for cross-builds, discoverable from a GCC-style
 cross-compiler.
