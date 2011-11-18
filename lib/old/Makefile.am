@@ -19,7 +19,7 @@ noinst_LTLIBRARIES = libkanye-notify.la
 libkanye_notify_la_SOURCES = kanye-notify.c kanye-notify.h
 
 libkanye_notify_la_CPPFLAGS = $(AM_CPPFLAGS) $(NOTIFY_CFLAGS) -DG_LOG_DOMAIN=\"$(PACKAGE)/kanye\"
-libkanye_notify_la_CFLAGS = -fvisibility=hidden
+libkanye_notify_la_CFLAGS = $(CFLAGS_INTERNAL)
 libkanye_notify_la_LIBADD = $(NOTIFY_LIBS)
 
 libold_la_LIBADD += libkanye-notify.la

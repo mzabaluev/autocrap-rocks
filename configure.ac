@@ -13,6 +13,12 @@ AC_CANONICAL_HOST
 dnl Checks for tools
 AC_PROG_CC
 
+AC_ARG_VAR([CFLAGS_INTERNAL],
+  [C compiler flags to use with internally linked modules])
+if test "$GCC" = 'yes'; then
+  test -n "$CFLAGS_INTERNAL" || CFLAGS_INTERNAL='-fvisibility=hidden'
+fi
+
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.18])
 
