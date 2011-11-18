@@ -41,7 +41,12 @@ as .pc files for pkg-config.
 using a one-line autoconf macro.
 
 * Selects conditional build variants and sets up configuration macro
-definitions based on results of e.g. dependency checks.
+definitions based on results of dependency checks or command line options.
+
+* Custom configuration options following the patterns --enable-feature and
+--with-feature. The macros to add these options are self-documenting and
+allow pretty printing fitting nicely together with other options in the output
+of ./configure --help.
 
 * Supports l10n via gettext. If gettext API is not provided by libc, only
 by libintl, it is automatically added to linker flags.
