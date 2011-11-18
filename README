@@ -19,6 +19,9 @@ An incomplete list of features supported in this project's build files:
 conventional directory location options and makefile variables, compiler
 selection and flags, etc.
 
+* Supports organization of the source tree into subdirectories, with
+all common targets built recursively.
+
 * Makefile rules automatically regenerate build files and rebuild all objects
 after autotools control files are modified.
 
