@@ -6,9 +6,11 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([foreign silent-rules color-tests])
 LT_INIT([disable-static])
 
+dnl Cross-compilation support
 AC_CANONICAL_BUILD
 AC_CANONICAL_HOST
 
+dnl Checks for tools
 AC_PROG_CC
 
 AM_GNU_GETTEXT([external])
