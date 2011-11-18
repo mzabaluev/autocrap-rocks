@@ -39,8 +39,8 @@ necessary for the destination directories.
 as .pc files for pkg-config.
 
 * Gets build flags from pkg-config files provided by build dependencies,
-using a one-line autoconf macro. The make variables carrying these flags
-are listed in the output of ./configure --help.
+using a one-line autoconf macro. The variables carrying these flags
+are overridable and listed in the output of ./configure --help.
 
 * Selects conditional build variants and sets up configuration macro
 definitions based on results of dependency checks or command line options.
