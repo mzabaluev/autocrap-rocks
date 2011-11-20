@@ -9,4 +9,4 @@ Version: @VERSION@
 Cflags: -I${includedir}/old-1.0
 Libs: -L${libdir} -lold
 Libs.private: @LIBINTL@
-
+Requires.private: @KANYE_PKG_REQUIRES_PRIVATE@

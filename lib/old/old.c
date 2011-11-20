@@ -2,8 +2,9 @@
 
 #include <stdio.h>
 
+#include <kanye/kanye.h>
+
 #include "config.h"
-#include "kanye.h"
 #include "l10n.h"
 
 void old()

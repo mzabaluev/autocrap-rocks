@@ -1,0 +1,3 @@
+[submodule "kanye"]
+	path = kanye
+	url = git@github.com:mzabaluev/autocrap-kanye.git

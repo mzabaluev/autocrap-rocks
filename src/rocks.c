@@ -3,7 +3,7 @@
 #include <libintl.h>
 
 #include <crap/crap.h>
-#include <old/kanye.h>
+#include <kanye/kanye.h>
 
 #include "config.h"
 

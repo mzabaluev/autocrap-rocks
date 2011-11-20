@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #include <old/old.h>
-#include <old/kanye.h>
+#include <kanye/kanye.h>
 
 #include "config.h"
 #include "l10n.h"
