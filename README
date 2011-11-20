@@ -13,6 +13,13 @@ running this command:
 
 ./configure --help
 
+With the following command, you can also see options and variables for
+subprojects:
+
+./configure --help=recursive
+
+To speed up the configure run, it is recommended to use option --config-cache.
+
 An incomplete list of features supported in this project's build files:
 
 * Supports all GNU makefile and configure script conventions, such as
@@ -104,13 +111,31 @@ cached, and a configure rerun using the cache errors out when any such value
 changes. If the old and the new values only differ in whitespace, however,
 only a warning is produced, but the old value is used.
 
+* Supports embedding of other autotools projects into the source tree.
+Options and important variables given to the top level configure are
+automatically passed to configure invocations for the subprojects. The
+configuration of nested projects uses the top level cache, avoiding repetition
+of some costly checks when the cache is enabled. The top-level configure help
+printout includes the help output for the subprojects if option
+--help=recursive is used. 
+
 * A script 'config.status' is produced to enable quick reconfiguration and
 regeneration of variable-substituted files, reusing options and precious
 variable values as given to the latest configure invocation.
 It is automatically invoked by the makefiles if changes to autotools
 files are detected.
 
+* configure.ac can use custom macros to perform common tasks. Macros can be
+made available by third parties or defined by the package maintainer.
+Macros can be shared between different projects (in our case the top project
+reuses a macro defined by the subproject).
+
+* Tools such as libtoolize, gettextize, and autopoint automatically supply
+m4 files with macro definitions. aclocal can also install macros on demand,
+and it can also automatically update macro definitions from newer revisions
+installed in the system, provided that the serial tags for them are updated
+correctly.
+
 * Optionally builds static libraries.
 
 * An option for non-verbose printouts of makefile rule execution.
-
