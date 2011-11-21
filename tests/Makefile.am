@@ -8,7 +8,7 @@ test_old_LDADD = ../lib/old/libold.la
 
 test_crap_SOURCES = crap-test.c
 
-test_crap_LDADD = ../lib/crap/libcrap.la
+test_crap_LDADD = ../lib/crap/libcrap.la ../lib/old/libold.la
 
-AM_CPPFLAGS = -I$(top_srcdir)/lib
+AM_CPPFLAGS = -I$(top_srcdir)/lib -I$(top_srcdir)/kanye
 
