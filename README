@@ -92,6 +92,7 @@ An incomplete list of features supported in this project's build files:
   and uninstalled without errors.
 
 * Supports cross-compilation if instructed by configure option --host.
+
   Note: in this mode, don't forget to use option --build to indicate the build
   system; this is needed due to problematic legacy behavior.
 
@@ -154,10 +155,10 @@ There are disadvantages, too.
   and ways of their interlinked use. The tools use at least three different
   languages: a customized m4 macro processor syntax, shell scripts, and a
   highly idiomatic subset of makefile syntax.
-  As the tools can be used independently, the documentation is spread between
-  individual tools. The so-called "Autobook" was written to serve as the
-  overall user documentation, but as of the time of this writing it is
-  outdated.
+  As some of the tools can be used independently, the documentation is spread
+  between individual tool projects. The so-called "Autobook" was written to
+  serve as the overall user documentation, but as of the time of this writing
+  it is outdated.
 
 * Autotools are complicated. The generated makefiles and shell scripts used in
   the actual build process are long and arcane. This makes debugging difficult
