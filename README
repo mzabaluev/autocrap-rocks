@@ -20,121 +20,126 @@ subprojects:
 
 To speed up the configure run, it is recommended to use option --config-cache.
 
+Show me what you got
+--------------------
 An incomplete list of features supported in this project's build files:
 
 * Supports all GNU makefile and configure script conventions, such as
-conventional directory location options and makefile variables, compiler
-selection and flags, etc.
+  conventional directory location options and makefile variables, compiler
+  selection and flags, etc.
 
 * Supports organization of the source tree into subdirectories, with
-all common targets built recursively.
+  all common targets built recursively.
 
 * Makefile rules automatically regenerate build files and rebuild all objects
-after autotools control files are modified.
+  after autotools control files are modified.
 
 * Automatically tracks header dependencies for rebuilding. This is an option
-that can be disabled, e.g. for distribution package builds.
-Note: Sometimes it breaks the build due to added or moved files, but you can
-fix it by running configure again.
+  that can be disabled, e.g. for distribution package builds.
+
+  Note: Sometimes it breaks the build due to added or moved files, but you
+  can fix it by running configure again.
 
 * Can build in a separate tree for output files.
 
 * The libraries and programs with interdependencies in the project are linked
-and wrapped as necessary to run them directly in the build tree.
+  and wrapped as necessary to run them directly in the build tree.
 
 * With make install rule, the shared libraries are installed with relinking as
-necessary for the destination directories.
+  necessary for the destination directories.
 
 * Substitution of configuration variables in installable files such
-as .pc files for pkg-config.
+  as .pc files for pkg-config.
 
 * Gets build flags from pkg-config files provided by build dependencies,
-using a one-line autoconf macro. The variables carrying these flags
-are overridable and listed in the output of ./configure --help.
+  using a one-line autoconf macro. The variables carrying these flags
+  are overridable and listed in the output of ./configure --help.
 
 * Selects conditional build variants and sets up configuration macro
-definitions based on results of dependency checks or command line options.
+  definitions based on results of dependency checks or command line options.
 
 * Custom configuration options following the patterns --enable-feature and
---with-feature. The macros to add these options are self-documenting and
-allow pretty printing fitting nicely together with other options in the output
-of ./configure --help.
+  --with-feature. The macros to add these options are self-documenting and
+  allow pretty printing fitting nicely together with other options in the
+  output of ./configure --help.
 
 * Supports l10n via gettext. If gettext API is not provided by libc, only
-by libintl, it is automatically added to linker flags.
+  by libintl, it is automatically added to linker flags.
 
 * Targets to regenerate the .po template file and update translation
-files with changes of translatable strings in sources. When the list of
-translated sources is updated, the template and translations are updated
-automatically.
+  files with changes of translatable strings in sources. When the list of
+  translated sources is updated, the template and translations are updated
+  automatically.
 
 * Supports installation to DESTDIR so that distribution package maintainers
-will love you.
+  will love you.
 
 * Makefile target 'dist' to create a distribution source tarball. Not everyone
-is thrilled about picking out your sources from the SCM working tree
-and bootstrapping configure with autotools as described above. The
-implementation of the dist target does not impose any extra requirements
-such as relying on your SCM and its working tree.
+  is thrilled about picking out your sources from the SCM working tree
+  and bootstrapping configure with autotools as described above. The
+  implementation of the dist target does not impose any extra requirements
+  beyond tar and the compression utility (gzip by default), such as relying
+  on your SCM and its working tree.
 
 * Automatically picks up the project boilerplate such as README, COPYING,
-AUTHORS, and includes it into the dist tarball.
+  AUTHORS, and includes it into the dist tarball.
 
 * Supports a simple suite of test programs with coloring for test run results.
 
 * Makefile target 'distcheck' to verify that the sources in the dist tarball
-can be configured for a separate build tree, compiled, the results pass the
-test suite, can be installed into a custom directory structure and DESTDIR
-and uninstalled without errors.
+  can be configured for a separate build tree, compiled, the results pass the
+  test suite, can be installed into a custom directory structure and DESTDIR
+  and uninstalled without errors.
 
 * Supports cross-compilation if instructed by configure option --host.
-Note: in this mode, don't forget to use option --build to indicate the build
-system; this is needed due to problematic legacy behavior.
+  Note: in this mode, don't forget to use option --build to indicate the build
+  system; this is needed due to problematic legacy behavior.
 
 * All macros checking for build tools respect the cross-tools triplet prefix
-in the cross-compilation mode. If the triplet-prefixed executable is not found,
-the build uses the unprefixed name, but leaves a warning in the output.
+  in the cross-compilation mode. If the triplet-prefixed executable is not
+  found, the build uses the unprefixed name, but leaves a warning in the
+  output.
 
 * Supports a sysroot location for cross-builds, discoverable from a GCC-style
-cross-compiler.
+  cross-compiler.
 
 * Detects when the C compiler is GCC, allowing portable usage of GCC-specific
-compiler flags.
+  compiler flags.
 
 * The configure script has an option to cache results of checks, enabling
-quick reruns with cached values when external changes are not deemed
-important.
+  quick reruns with cached values when external changes are not deemed
+  important.
 
 * Supports declaration of important configuration variables and documents them
-in the output of ./configure --help. The values of precious variables are
-cached, and a configure rerun using the cache errors out when any such value
-changes. If the old and the new values only differ in whitespace, however,
-only a warning is produced, but the old value is used.
+  in the output of ./configure --help. The values of precious variables are
+  cached, and a configure rerun using the cache errors out when any such value
+  changes. If the old and the new values only differ in whitespace, however,
+  only a warning is produced, but the old value is used.
 
 * Supports embedding of other autotools projects into the source tree.
-Options and important variables given to the top level configure are
-automatically passed to configure invocations for the subprojects. The
-configuration of nested projects uses the top level cache, avoiding repetition
-of some costly checks when the cache is enabled. The top-level configure help
-printout includes the help output for the subprojects if option
---help=recursive is used. 
+  Options and important variables given to the top level configure are
+  automatically passed to configure invocations for the subprojects. The
+  configuration of nested projects uses the top level cache, avoiding
+  repetition of some costly checks when the cache is enabled. The top-level
+  configure help printout includes the help output for the subprojects if
+  option --help=recursive is used. 
 
-* A script 'config.status' is produced to enable quick reconfiguration and
-regeneration of variable-substituted files, reusing options and precious
-variable values as given to the latest configure invocation.
-It is automatically invoked by the makefiles if changes to autotools
-files are detected.
+* A script 'config.status' is produced to enable quick rechecking and
+  regeneration of variable-substituted files, reusing options and precious
+  variable values as given to the latest configure invocation.
+  It is automatically invoked by the makefiles if changes to autotools
+  files are detected.
 
 * configure.ac can use custom macros to perform common tasks. Macros can be
-made available by third parties or defined by the package maintainer.
-Macros can be shared between different projects (in our case the top project
-reuses a macro defined by the subproject).
+  made available by third parties or defined by the package maintainer.
+  Macros can be shared between different projects (in our case the top project
+  reuses a macro defined by the subproject).
 
 * Tools such as libtoolize, gettextize, and autopoint automatically supply
-m4 files with macro definitions. aclocal can also install macros on demand,
-and it can also automatically update macro definitions from newer revisions
-installed in the system, provided that the serial tags for them are updated
-correctly.
+  m4 files with macro definitions. aclocal can also install macros on demand,
+  and it can also automatically update macro definitions from newer revisions
+  installed in the system, provided that the serial tags for them are updated
+  correctly.
 
 * Optionally builds static libraries.
 
