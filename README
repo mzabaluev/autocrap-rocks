@@ -144,3 +144,41 @@ An incomplete list of features supported in this project's build files:
 * Optionally builds static libraries.
 
 * An option for non-verbose printouts of makefile rule execution.
+
+The Dark Side
+-------------
+There are disadvantages, too.
+
+* Autotools is a baroque build system. It requires the project
+  maintainer to be proficient with three or four different tool families
+  and ways of their interlinked use. The tools use at least three different
+  languages: a customized m4 macro processor syntax, shell scripts, and a
+  highly idiomatic subset of makefile syntax.
+  As the tools can be used independently, the documentation is spread between
+  individual tools. The so-called "Autobook" was written to serve as the
+  overall user documentation, but as of the time of this writing it is
+  outdated.
+
+* Autotools are complicated. The generated makefiles and shell scripts used in
+  the actual build process are long and arcane. This makes debugging difficult
+  if any problems arise with the tools, or even when there are errors in
+  the project files that went unnoticed by the tools, resulting in incorrect
+  build files.
+
+* Autotools have a lot of legacy. Configure check scripts, makefile rules,
+  and libtool go a long way towards addressing problems that don't apply to
+  modern systems such as Linux. This causes a lot of extra complexity.
+
+* With autotools, you invite much more variation in your build than with
+  plain makefiles and shell scripts. An autotools project depends on
+  versions of the tools installed in the system for correct bootstrapping;
+  this is not a problem for source trees unpacked from distribution tarballs,
+  though.
+  The installed tools can also have customizations introduced by e.g. the
+  distribution vendor to enforce some additional policies. 
+
+* Autotools-based projects impose more dependencies for porting onto new
+  platforms or cross-platform build environments. A more gradual approach
+  is to start with a distribution tarball, in hope that the generated shell
+  scripts and makefiles it contains will work without much adaptation on the
+  already ported essential set of build utilities.
